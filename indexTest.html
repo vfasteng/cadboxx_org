@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="aframe-master.min.js"></script>
+        <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
+    </head>
+    <body>
+        <a-scene>
+			<a-assets>
+			  	<a-asset-item id="g01" src="assets/models/glb/fxx.glb"></a-asset-item>
+		        <a-asset-item id="g02" src="assets/models/glb/fyy.glb"></a-asset-item>
+		        <a-asset-item id="g03" src="assets/models/glb/fzz.glb"></a-asset-item>
+				<a-asset-item id="g04" src="assets/models/glb/in3speed.glb"></a-asset-item>
+		        <a-asset-item id="g05" src="assets/models/glb/out3speed.glb"></a-asset-item>
+		        <a-asset-item id="g06" src="assets/models/glb/chink2.glb"></a-asset-item>
+				
+			  </a-assets>
+			
+			
+			  
+			  <a-entity position="0 2 -3" >
+			  	<!--<a-entity gltf-model="#g01" static-body="shape: box; mass: 0" position="0 0.379 0" rotation="0 0 90" scale=".01 .01 .01"></a-entity>
+			    <a-entity gltf-model="#g02" static-body="shape: box; mass: 0" position="0 0 0" rotation="0 0 90" scale=".01 .01 .01"></a-entity>
+		-->
+		    	<a-entity gltf-model="#g06" static-body="shape: box; mass: 0" position="0 0 0" rotation="0 0 90" scale=".01 .01 .01"></a-entity>
+			  
+			  </a-entity>
+			  
+			  
+			  
+            <!--Build our background and our floor-->
+            <a-plane static-body position="0 0 -4" rotation="-90 0 0" width="100" height="100" color="#7BC8A4"></a-plane>
+            <a-sky color="#ECECEC"></a-sky>
+            
+            <!--Build three obstacles as static bodies so we can stand on them-->
+            <a-box static-body position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+            <a-cylinder static-body position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+            
+            <!--Build one dynamic body - a soccer ball we can play with-->
+            <a-sphere id="theball" dynamic-body position="4 1.25 -5" radius="0.5" color="tomato" mass="1"></a-sphere>
+            
+            <!--Make a player/camera entity, and give it the attributes we need it to have in order control camera with mouse, movement with WASD, and jump with spacebar-->
+            <a-entity class="player" id="player"
+                camera
+				look-controls
+				wasd-controls
+                jump-ability
+                universal-controls
+                kinematic-body
+                position="1 4 2">
+            </a-entity>
+        </a-scene>
+    </body>
+    <script type="text/javascript" src="script.js"></script>
+</html>

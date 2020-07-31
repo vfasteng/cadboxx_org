@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <title>Basic Interactions - A-Frame</title>
+    <meta name="description" content="Interactions - A-Frame">
+    <script src="js/aframe-master.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+</head>
+
+<body>
+    <a-scene stats anti-alias>
+        <a-box position="-1 0.5 -3" rotation="0 45 0" color="darkblue"></a-box>
+        <a-sphere position="0 1.25 -5" radius="1.25" color="darkblue"></a-sphere>
+        <a-assets>
+            <img id="sky" src="img/sphere.jpg">
+        </a-assets>
+        <a-sky src="#sky"></a-sky>
+        <a-entity laser-controls="hand: right"></a-entity>
+        <a-entity oculus-go-controls x-button-listener></a-entity>
+        <a-entity laser-controls="hand: left"></a-entity>
+    </a-scene>
+</body>
+
+</html>
