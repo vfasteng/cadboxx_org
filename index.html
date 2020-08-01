@@ -4,20 +4,38 @@
     <title>Basic Interactions - A-Frame</title>
     <meta name="description" content="Interactions - A-Frame">
     <script src="aframe-master.min.js"></script>
+    <script src="aframe-physics-system.min.js"></script>
+    <script src="aframe-extras.min.js"></script>
+    <script src="aframe-environment-component.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
 </head>
 
 <body>
-    <a-scene stats anti-alias>
-        <a-box position="-1 0.5 -3" rotation="0 45 0" color="darkblue"></a-box>
-        <a-sphere position="0 1.25 -5" radius="1.25" color="darkblue"></a-sphere>
+    <a-scene environment>
         <a-assets>
-            <img id="sky" src="img/sphere.jpg">
-        </a-assets>
-        <a-sky src="#sky"></a-sky>
-        <a-entity laser-controls="hand: right"></a-entity>
+			  	<a-asset-item id="g01" src="assets/models/glb/fxx_Reduced.glb"></a-asset-item>
+		        <a-asset-item id="g02" src="assets/models/glb/fyy.glb"></a-asset-item>
+		        <a-asset-item id="g03" src="assets/models/glb/fzz.glb"></a-asset-item>
+				<a-asset-item id="g04" src="assets/models/glb/in3speed.glb"></a-asset-item>
+		        <a-asset-item id="g05" src="assets/models/glb/out3speed.glb"></a-asset-item>
+		        <a-asset-item id="g06" src="assets/models/glb/chink2.glb"></a-asset-item>
+				
+			  </a-assets>
+			
+			
+			  
+			  <a-entity position="0 2 -3" >
+			  	<!--<a-entity gltf-model="#g01" static-body="shape: box; mass: 0" position="0 0.379 0" rotation="0 0 90" scale=".01 .01 .01"></a-entity>
+			    <a-entity gltf-model="#g02" static-body="shape: box; mass: 0" position="0 0 0" rotation="0 0 90" scale=".01 .01 .01"></a-entity>
+		-->
+		    	<a-entity gltf-model="#g01" static-body="shape: box; mass: 0" position="0 0 0" rotation="0 0 90" scale=".01 .01 .01"></a-entity>
+			  
+			  </a-entity>
+        
+        
+        <!--<a-entity laser-controls="hand: right"></a-entity>
         <a-entity oculus-go-controls x-button-listener></a-entity>
-        <a-entity laser-controls="hand: left"></a-entity>
+        <a-entity laser-controls="hand: left"></a-entity>-->
     </a-scene>
 </body>
 
